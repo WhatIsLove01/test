@@ -1,0 +1,175 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e6f2e6;
+  color: #2d4a2d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #4caf50;
+  padding: 15px 0;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+  user-select: none;
+  cursor: default;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav .nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+nav .nav-link:hover {
+  opacity: 0.8;
+}
+
+main {
+  background: white;
+  padding: 30px 0;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 20px rgba(45, 74, 45, 0.2);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #3a7d3a;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: left;
+  color: #317331;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 2px solid #4caf50;
+  border-radius: 6px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #3b8b3b;
+}
+
+.btn-primary {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3b8b3b;
+}
+
+/* Адаптив */
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  nav .nav-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  nav {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  nav .nav-link {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    font-size: 0.95rem;
+  }
+
+  main {
+    padding: 20px 15px;
+    border-radius: 12px;
+    margin-top: 120px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+

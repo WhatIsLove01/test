@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Создать портфолио</title>
+  <link rel="stylesheet" href="css/create.css" />
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA8Fo9eGc2bK2b-FM1y61XeCVw4EWxlCXQ",
+      authDomain: "portfolio-48a0d.firebaseapp.com",
+      projectId: "portfolio-48a0d",
+      storageBucket: "portfolio-48a0d.firebasestorage.app",
+      messagingSenderId: "53759423675",
+      appId: "1:53759423675:web:3771c5c977b48d0a25659e",
+      measurementId: "G-P4863WDKQE"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+    window.db = db;
+    window.doc = doc;
+    window.setDoc = setDoc;
+  </script>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">Веб-портфолио</div>
+    <nav>
+      <a href="index.html" class="nav-link">Главная</a>
+      <a href="create.html" class="nav-link">Создать</a>
+      <a href="view.html" class="nav-link">Просмотр</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <form id="portfolioForm">
+    <label for="portfolioId">Уникальный ID:</label>
+    <input type="text" id="portfolioId" required />
+
+    <label for="name">Имя:</label>
+    <input type="text" id="name" required />
+
+    <label for="about">О себе:</label>
+    <textarea id="about"></textarea>
+
+    <label for="projects">Проекты:</label>
+    <textarea id="projects"></textarea>
+
+    <button type="submit">Сохранить портфолио</button>
+  </form>
+</main>
+
+<script src="js/create.js"></script>
+</body>
+</html>
